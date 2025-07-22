@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+
+        <form id="form-data">
+            <h1>URL Shortner</h1>
+            <label for="url">Enter URL</label>
+            <input type="text" name="url" required>
+            <label for="url">Custom Short-URL(Optional)</label>
+            <input type="text" name="short-url" required>
+            <button>Shorten</button>
+        </form>
+        <h2>Shortend URL</h2>
+        <ul></ul>
+
+    </div>
+    <script>
+        document.getElementById("form-data").addEventListener("submit",(e)=>{
+            e.preventDefault();  //prevents the form from submitting....
+            const formdata = new FormData(event.target); //constructor fnc.
+
+            const url=formdata.get('url');
+            const shortcode=formdata.get('short-url');
+            console.log(url,shortcode);
+        })
+
+    </script>
+</body>
+<!-- get() method of the FormData interface returns the first value associated with a given key from within a FormData object -->
+</html>
